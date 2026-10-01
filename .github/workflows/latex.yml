@@ -19,8 +19,8 @@ jobs:
         with:
           root_file: "Update_Wing_Area_to_Wing_Length_Ratio.tex"
 
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4
+      - name: Commit PDF to repository
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          name: compiled-pdf
-          path: Update_Wing_Area_to_Wing_Length_Ratio.pdf
+          commit_message: "Update compiled PDF"
+          file_pattern: "Update_Wing_Area_to_Wing_Length_Ratio.pdf"

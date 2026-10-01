@@ -23,4 +23,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: compiled-pdf
-          path: main.pdf
+          path: Update_Wing_Area_to_Wing_Length_Ratio.pdf

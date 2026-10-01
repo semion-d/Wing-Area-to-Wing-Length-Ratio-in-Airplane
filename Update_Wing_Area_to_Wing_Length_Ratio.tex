@@ -15,7 +15,7 @@
 
 \section{Introduction} 
 
-Let's say we have 2 paper airplanes, one of them is really long, but at the same time narrow, and on the other hand we have short but wide airplane. Both of them have same wing area. Question: what will fly longer and on longer distances, what will be more effecrive? This will be a problem to solve in this short essay. It will be devided into 3 main parts: Hypothesys, which will make a prediction of the outcome based on math, physics and logic; next is an experiment, which will check the hypothesis; and the last one conclusion, which will summarise everything into a simple logic - math statement.   
+Let's say we have 2 paper airplanes, one of them is really long, but at the same time narrow, and on the other hand we have a short but wide airplane. Both of them have the same wing area. The question is: what will fly longer and over longer distances, and what will be more effective? This will be a problem to solve in this short essay. It will be divided into 3 main parts: Hypothesis, which will make a prediction of the outcome based on math, physics and logic; next is an experiment, which will check the hypothesis; and the last one is the conclusion, which will summarize everything into a simple logic-math statement.   
 
 \[
 ***********************
@@ -25,9 +25,9 @@ Let's say we have 2 paper airplanes, one of them is really long, but at the same
 
 \section{Hypothesis}
 
-\subsection{forces}
+\subsection{Forces}
 
-At first we need to define forces that act upon complex airplane - looking object. 
+At first we need to define the forces that act upon a complex airplane-looking object. 
 
 Here is the list:
 
@@ -48,14 +48,14 @@ Here is the list:
 \end{tabular}
 \end{center}
 
-/vspace{5mm}
+\vspace{5mm}
 
-In this case we will not use thrust for seceral reasons: it does not effect efficiency of the airplane itself, it just creates a cointinious kinetic energy input; and it is harder to simulate on a small experimental scale, the only way where trust will be included is the power input, when we throw the airplane. So what's left is Gravity (or weight), Lift, and Drag.
-Lift is a force that pushes plane upwards, it happend because the area under the wing has higher airpressure then on the top, and this pressure difference moves airplane up. It is calculated through this formula: 
+In this case we will not use thrust for several reasons: it does not affect the efficiency of the airplane itself, it just creates a continuous kinetic energy input; and it is harder to simulate on a small experimental scale. The only way where thrust will be included is the power input when we throw the airplane. So what's left is Gravity (or weight), Lift, and Drag.
 
+Lift is a force that pushes the plane upwards. It happens because the area under the wing has higher air pressure than the top, and this pressure difference moves the airplane up. It is calculated through this formula:
 
-\[ 
-L = \frac{1}{2}pv^2SC_L
+\[
+L = \frac{1}{2}\rho v^2 S C_L
 \]
 
 \renewcommand{\arraystretch}{2}
@@ -64,15 +64,17 @@ L = \frac{1}{2}pv^2SC_L
 \toprule
 \textbf{Variable} & \textbf{Meaning} & \textbf{Unit} \\
 \midrule
-\textbf{L} & \textbf{Lift} & \textbf{Newtons $N$} \\
-\textbf{p} & \textbf{air density} & \textbf{$kg/m^3$} \\
-\textbf{v} & \textbf{air velocity} & \textbf{$m/s$} \\
-\textbf{S} & \textbf{Wing area} & \textbf{$m^2$} \\
-\textbf{C_L} & \textbf{Coefficient of lift} & \textbf{Scalar} \\
+\textbf{$L$} & \textbf{Lift} & \textbf{Newtons ($N$)} \\
+\midrule
+\textbf{$\rho$} & \textbf{Air density} & $\mathrm{kg/m^3}$ \\
+\midrule
+\textbf{$v$} & \textbf{Air velocity} & $\mathrm{m/s}$ \\
+\midrule
+\textbf{$S$} & \textbf{Wing area} & $\mathrm{m^2}$ \\
+\midrule
+\textbf{$C_L$} & \textbf{Coefficient of lift} & \textbf{Scalar} \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-
-
-\end{document} 
+\end{document}

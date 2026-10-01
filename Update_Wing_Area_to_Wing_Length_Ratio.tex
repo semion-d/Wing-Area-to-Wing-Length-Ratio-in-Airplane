@@ -13,7 +13,66 @@
 
 \maketitle
 
+\section{Introduction} 
+
+Let's say we have 2 paper airplanes, one of them is really long, but at the same time narrow, and on the other hand we have short but wide airplane. Both of them have same wing area. Question: what will fly longer and on longer distances, what will be more effecrive? This will be a problem to solve in this short essay. It will be devided into 3 main parts: Hypothesys, which will make a prediction of the outcome based on math, physics and logic; next is an experiment, which will check the hypothesis; and the last one conclusion, which will summarise everything into a simple logic - math statement.   
+
+\[
+***********************
+\]
+
+\newpage
+
+\section{Hypothesis}
+
+\subsection{forces}
+
+At first we need to define forces that act upon complex airplane - looking object. 
+
+Here is the list:
+
+\renewcommand{\arraystretch}{2}
+\begin{center}
+\begin{tabular}{c|l}
+\toprule
+\textbf{Force} & \textbf{Representation} \\
+\midrule
+\textbf{Gravity} & \textbf{Representation through constant $g = 9.81$ and mass of the object} \\
+\midrule
+\textbf{Lift} & \textbf{Representation in Newtons as a variable $L$ in formulas} \\
+\midrule
+\textbf{Drag} & \textbf{Representation in Newtons as a variable $D$ in formulas} \\
+\midrule
+\textbf{Thrust} & \textbf{Representation in Newtons as a variable $T$ in formulas} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+/vspace{5mm}
+
+In this case we will not use thrust for seceral reasons: it does not effect efficiency of the airplane itself, it just creates a cointinious kinetic energy input; and it is harder to simulate on a small experimental scale, the only way where trust will be included is the power input, when we throw the airplane. So what's left is Gravity (or weight), Lift, and Drag.
+Lift is a force that pushes plane upwards, it happend because the area under the wing has higher airpressure then on the top, and this pressure difference moves airplane up. It is calculated through this formula: 
+
+
 \[ 
 L = \frac{1}{2}pv^2SC_L
 \]
+
+\renewcommand{\arraystretch}{2}
+\begin{center}
+\begin{tabular}{c|l|b}
+\toprule
+\textbf{Variable} & \textbf{Meaning} $ \textbf{Unit} \\
+\midrule
+\textbf{L} & \textbf{Lift} $ \textbf{Newtons $N$} \\
+\textbf{p} & \textbf{air density} $ \textbf{$kg\m^3$} \\
+\textbf{v} & \textbf{air velocity} $ \textbf{$m\s$} \\
+\textbf{S} & \textbf{Wing area} $ \textbf{$m^2$} \\
+\textbf{C_L} & \textbf{Coefficient of lift} $ \textbf{Scalar} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+
 \end{document} 

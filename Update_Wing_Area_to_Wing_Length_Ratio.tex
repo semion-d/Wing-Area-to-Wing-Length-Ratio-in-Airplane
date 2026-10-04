@@ -79,15 +79,87 @@ L = \frac{1}{2}\rho v^2 S C_L
 
 \vspace{5mm}
 
-$C_L$ is a scalar from 0 to 1 and combines in itself many wing parameters, one of the main of them is an angle of attack of the wing $\alfa$ and it represents the angle of the wing. Here is the formula for it:
+$C_L$ is a scalar from 0 to 1 and combines in itself many wing parameters, one of the main of them is an angle of attack of the wing $\alpha$ and it represents the angle of the wing. Here is the formula for it:
 
 \[
-C_L = C_L0 + a \alfa
+C_L = C_{L0} + a\alpha
 \]
 
-$a$ is the lift-curve slope, and in general it tells us the speed at which $C_L$ grows when $\alfa$ grows. Basically it is the dirivitive of a linear function $C_L$. $C_L0$ is the lift coefficient at \(0^\circ\) angle of attack, which might be positive or negative, but in this case we will consider this equal to 0. \\
+$a$ is the lift-curve slope, and in general it tells us the speed at which $C_L$ grows when $\alpha$ grows. Basically it is the dirivitive of a linear function $C_L$. $C_{L0}$ is the lift coefficient at \(0^\circ\) angle of attack, which might be positive or negative, but in this case we will consider this equal to 0.
 
-\subsection{Other Formulas}
+To calculate lift-curve slope we can use this formula:
+
+\[
+a = \frac{a_0}{1+\frac{a_0}{\pi e AR}}
+\]
+
+where:
+
+\[
+a = \text{lift-curve slope}
+\]
+
+\[
+a_0 = \text{2D airfoil lift-curve slope}
+\]
+
+\[
+e = \text{Oswald efficiency factor}
+\]
+
+\[
+AR = \text{aspect ratio}
+\]
+
+$a_0$ tells you how quickly the lift coefficient $C_L$ changes with angle of attack for an idealized wing cross-section extending infinitely in the spanwise direction (was not expecting that i will write smth so clever). But counting that wing is a finite region, air starts to behave differently, creating friction and drag, which is included and considered in $a$. For our project $a_0$ will be:
+
+\[
+\boxed{a_0 \approx 2\pi\ \mathrm{rad}^{-1}}
+\]
+
+Next one is $e$ whcih tells us how efficiently a real finite wing produces lift compared with an ideal wing. It is scalar from 0 to 1 and usually lies between 0.7 ad 1, for this experiment we will chose 0.8, which is usual for flat wings. 
+
+Our plane will also expirience drag, which we can not ignore, so here is the formula:
+
+\[
+\boxed{C_D = C_{D_p} + C_{D_i}}
+\]
+
+\[
+\boxed{
+C_D = C_{D_p} + \frac{C_L^2}{\pi e AR}
+}
+\]
+
+And consequently:
+
+\[
+\boxed{
+D = \frac{1}{2}\rho v^2 S
+\left(
+C_{D_p} + \frac{C_L^2}{\pi e AR}
+\right)
+}
+\]
+
+\renewcommand{\arraystretch}{2}
+\begin{center}
+\begin{tabular}{c|l|l}
+\toprule
+\textbf{Variable} & \textbf{Meaning} & \textbf{Unit} \\
+\midrule
+$D$ & Total drag force & $\mathrm{N}$ \\
+$C_D$ & Total drag coefficient & Dimensionless \\
+$\rho$ & Air density & $\mathrm{kg/m^3}$ \\
+$v$ & Air velocity & $\mathrm{m/s}$ \\
+$S$ & Wing area & $\mathrm{m^2}$ \\
+$C_{D_p}$ & Parasite/profile drag coefficient & Dimensionless \\
+$C_L$ & Lift coefficient & Dimensionless \\
+$e$ & Oswald efficiency factor & Dimensionless \\
+$AR$ & Wing aspect ratio & Dimensionless \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 Before actually calculating parameters of our 2 prototypes we need to establish the difference between them using math. Engineers did it already long time ago and came up with this fromula:
 
@@ -95,20 +167,6 @@ Before actually calculating parameters of our 2 prototypes we need to establish 
 AR = \frac{b^2}{S}
 \]
 
-$AR$ is the apect ratio, which represents the relationship between wing area $S$ and wing span $b$ which is a distance from one tip of the wing to another. This formula will help us to separate 2 ptototypes on a mathematical level. One more formula that will make our life easier is a formula for the lift-curve slope:
-
-$$ a=\frac{a_0}{1+\frac{a_0}{\pi e AR}} $$
-
-where:
-
-\(a\) = lift-curve slope
-\(a_0\) = 2D airfoil lift-curve slope
-\(e\) = Oswald efficiency factor
-\(AR\) = aspect ratio
-
-$a_0$ tells you how quickly the lift coefficient \(C_L\) changes with angle of attack for an idealized wing cross-section extending infinitely in the spanwise direction (was not expecting that i will write smth so clever). But counting that wing is a finite region, air starts to behave differently, creating friction and drag, which is included and considered in $a$. For our project $a_0$ will be $ \boxed{a_0\approx2\pi\ \text{rad}^{-1}} $. 
-
-
-
+$AR$ is the apect ratio, which represents the relationship between wing area $S$ and wing span $b$ which is a distance from one tip of the wing to another. This formula will help us to separate 2 ptototypes on a mathematical level. 
 
 \end{document}

@@ -77,4 +77,38 @@ L = \frac{1}{2}\rho v^2 S C_L
 \end{tabular}
 \end{center}
 
+\vspace{5mm}
+
+$C_L$ is a scalar from 0 to 1 and combines in itself many wing parameters, one of the main of them is an angle of attack of the wing $\alfa$ and it represents the angle of the wing. Here is the formula for it:
+
+\[
+C_L = C_L0 + a \alfa
+\]
+
+$a$ is the lift-curve slope, and in general it tells us the speed at which $C_L$ grows when $\alfa$ grows. Basically it is the dirivitive of a linear function $C_L$. $C_L0$ is the lift coefficient at \(0^\circ\) angle of attack, which might be positive or negative, but in this case we will consider this equal to 0. \\
+
+\subsection{Other Formulas}
+
+Before actually calculating parameters of our 2 prototypes we need to establish the difference between them using math. Engineers did it already long time ago and came up with this fromula:
+
+\[
+AR = \frac{b^2}{S}
+\]
+
+$AR$ is the apect ratio, which represents the relationship between wing area $S$ and wing span $b$ which is a distance from one tip of the wing to another. This formula will help us to separate 2 ptototypes on a mathematical level. One more formula that will make our life easier is a formula for the lift-curve slope:
+
+$$ a=\frac{a_0}{1+\frac{a_0}{\pi e AR}} $$
+
+where:
+
+\(a\) = lift-curve slope
+\(a_0\) = 2D airfoil lift-curve slope
+\(e\) = Oswald efficiency factor
+\(AR\) = aspect ratio
+
+$a_0$ tells you how quickly the lift coefficient \(C_L\) changes with angle of attack for an idealized wing cross-section extending infinitely in the spanwise direction (was not expecting that i will write smth so clever). But counting that wing is a finite region, air starts to behave differently, creating friction and drag, which is included and considered in $a$. For our project $a_0$ will be $ \boxed{a_0\approx2\pi\ \text{rad}^{-1}} $. 
+
+
+
+
 \end{document}

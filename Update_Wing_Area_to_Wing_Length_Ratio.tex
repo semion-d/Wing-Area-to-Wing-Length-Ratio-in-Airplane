@@ -167,22 +167,7 @@ $AR$ is the apect ratio, which represents the relationship between wing area $S$
 
 \subsection{Calculation of Characteristics for Wide Airplane}
 
-
-Before actually starting to calculate parameters of our prototypes we need to list values that we already established above:
-
-\[
-a_0 = 2\pi\ \mathrm{rad}^{-1}
-\]
-
-\[
-e = 0.7
-\]
-
-\[
-C_{L0} = 0
-\]
-
-Then we can start calculation. We need to remember that we have 4 main forces acting upon this object.
+We need to remember that we have 4 main forces acting upon this object.
 \[ 
 \vec{L} = \textbf{Lift}\\
 
@@ -195,15 +180,131 @@ Then we can start calculation. We need to remember that we have 4 main forces ac
 
 We know that $\vec{L}$ is perpendicular to $\vec{D}$ and $\vec{T}$, but parallel to $\vec{W}$ so:
 
-\[ \vec{L} \perp \vec{D}
-\[ \vec{L} \perp \vec{T}
-\[ \vec{L} \parallel \vec{W}
+\[ 
+\vec{L} \perp \vec{D}
+\vec{L} \perp \vec{T}
+\vec{L} \parallel \vec{W}
+/]
 
-Now let's put every formula together and form a bigger one, which will be easier to simplify, as we established some units. 
+So if to think in terms of vectorical math we can write our net force of flying airplane like this:
+
+\[ 
+\vec{T} + \vec{D} + \vec{L} + \vec{W} = \vec{F_{\mathrm{net}}} \\ 
+
+\lVert \vec{F_{\mathrm{net}}} \rVert= F_{\mathrm{net}}
+/]
+
+But we are not masachists to write it in vectors if we can write it just using scalars (which is less intuitive, but easier to calculate later). By knowing vector oriantations we can form triangles, and use pyghogorian theorem:
+
+\[
+F_{\mathrm{net}} = \sqrt{(T-D)^2+(L-W)^2}
+/]
 
 
+Now we have already a base patter, as for now we need to substitude everything we know:
 
-Then we need to choose wing span and area, and the calculate $AR$. For wing span I will choose units that are wide enough and easy enough to make on 3d printer 
+Therefore, the fully substituted equation is:
+
+\[
+F_{\mathrm{net}} = \sqrt{ \left[ T- \frac12\rho v^2S \left( C_{D_p} + \frac{S}{\pi e b^2} \left( \frac{a_0\alpha} {1+\frac{a_0S}{\pi e b^2}} \right)^2 \right) \right]^2 + \left[ \frac12\rho v^2S \left( \frac{a_0\alpha} {1+\frac{a_0S}{\pi e b^2}} \right) -mg \right]^2
+\]
+
+Also we can change $T$ to equation of force:
+
+\[
+T=m\frac{\Delta v}{\Delta t}
+\]
+
+
+\[
+F_{\mathrm{net}} = \sqrt{ \left[ m\frac{\Delta v}{\Delta t} - \frac12\rho v^2S \left( C_{D_p} + \frac{S}{\pi e b^2} \left( \frac{2\pi\alpha} {1+\frac{2S}{e b^2}} \right)^2 \right) \right]^2 + \left[ \frac12\rho v^2S \left( \frac{2\pi\alpha} {1+\frac{2S}{e b^2}} \right) -mg \right]^2 }
+\]
+
+Then we substitute:
+
+\[
+C_{D_p}=0 $$ 
+\]
+
+\[
+e=0.7 $$ 
+\]
+
+\[
+a_0=2\pi\ \mathrm{rad}^{-1} $$ 
+\]
+
+\[
+C_{L0}=0 $$
+\]
+
+and standard near-sea-level values:
+
+\[ 
+\rho=1.225\ \mathrm{kg/m^3}
+\]
+
+\[ 
+g=9.81\ \mathrm{m/s^2}
+\]
+
+Then:
+
+\[
+\frac12\rho = \frac12(1.225) = 0.6125 
+\]
+
+and
+
+\[ 
+\frac{a_0S}{\pi e b^2} = \frac{2\pi S}{\pi(0.7)b^2} = \frac{2S}{0.7b^2} = \frac{20S}{7b^2} 
+\]
+
+equation becomes:
+
+\[
+F_{\mathrm{net}} = \sqrt{ \left[ m\frac{\Delta v}{\Delta t} - 0.6125v^2S \left( \frac{S}{0.7\pi b^2} \left( \frac{2\pi\alpha} {1+\frac{20S}{7b^2}} \right)^2 \right) \right]^2 + \left[ 0.6125v^2S \left( \frac{2\pi\alpha} {1+\frac{20S}{7b^2}} \right) -9.81mg \right]^2 }
+\]
+
+Then we need to choose wing span and area. For wing span I will choose units that are wide enough and easy enough to make on 3d printer:
+
+
+\[ 
+b= 0.20 \text{m} 
+\]
+
+\[
+S= 0.0040 m^2
+\]
+
+
+So:
+
+\[
+F_{\mathrm{net}} = \sqrt{ \left[ m\frac{\Delta v}{\Delta t} - 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) -9.81mg \right]^2 }
+\]
+
+And for the purpose of simplicity, let's make it equal to 0, which will be easier to calculate and compare later:
+
+\[ 
+\sqrt{ \left[ m\frac{\Delta v}{\Delta t} - 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) -9.81mg \right]^2 } =0 }
+\] 
+
+But this equation can be equal to zero only if both terms are zero:
+
+\[ 
+m\frac{\Delta v}{\Delta t} = 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) 
+\]
+
+
+\[
+0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) = 9.81mg
+\]
+
+Now we have only 3 variables left, 2 of them we will find in the next section.
+
+\subsection{Designing Wide Airplane}
+
 
 
 \end{document}

@@ -305,6 +305,51 @@ Now we have only 3 variables left, 2 of them we will find in the next section.
 
 \subsection{Designing Wide Airplane}
 
+I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0015 kg. Which we can insert into the equation:
+
+\[
+\sqrt{ \left[ 0.0015\frac{\Delta v}{\Delta t} - 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 } =0 
+\]
+
+And we can simplify it further.
+
+Since:
+
+\[ 
+0.6125(0.004)=0.00245
+\]
+
+we get:
+
+\[
+\sqrt{ \left[ 0.0015\frac{\Delta v}{\Delta t} - 0.00245v^2 \left( \frac{0.004}{0.028\pi} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.00245v^2 \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 } =0 
+\]
+
+Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$
+
+\[
+v = 10 m/s
+\]
+
+\[
+\frac{\Delta v}{\Delta t} = 50 m/s^2
+/]
+
+Now we need to find an angle of attack 
+So:
+
+\[
+\sqrt{ \left[ (0.0015)(50) - 0.00245(10)^2 \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.00245(10)^2 \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 }=0
+\]
+Simplify:
+
+\[
+\sqrt{ \left[ 0.075 - 0.01114 \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right]^2 + \left[ 0.245 \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 }=0 
+\]
+
+
+
+
 
 
 \end{document}

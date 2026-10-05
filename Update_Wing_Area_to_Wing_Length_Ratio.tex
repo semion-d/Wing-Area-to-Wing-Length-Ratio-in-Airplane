@@ -122,20 +122,22 @@ Next one is $e$ whcih tells us how efficiently a real finite wing produces lift 
 Our plane will also expirience drag, which we can not ignore, so here is the formula:
 
 \[
-C_D = C_{D_p} + C_{D_i}
+\boxed{C_D = C_{D_p} + C_{D_i}}
 \]
 
 \[
-C_D = C_{D_p} + \frac{C_L^2}{\pi e AR}
+\boxed{C_D = C_{D_p} + \frac{C_L^2}{\pi e AR}}
 \]
 
 And consequently:
 
 \[
+\boxed{
 D = \frac{1}{2}\rho v^2 S
 \left(
 C_{D_p} + \frac{C_L^2}{\pi e AR}
 \right)
+}
 \]
 
 \renewcommand{\arraystretch}{2}
@@ -170,43 +172,62 @@ $AR$ is the apect ratio, which represents the relationship between wing area $S$
 We need to remember that we have 4 main forces acting upon this object.
 \[ 
 \vec{L} = \textbf{Lift}\\
-
 \vec{D} = \textbf{Drag}\\
-
 \vec{T} = \textbf{Thrust}\\
-
-\vec{W} = \textbf{Gravity}\\
+\vec{W} = \textbf{Gravity}
 \]
 
 We know that $\vec{L}$ is perpendicular to $\vec{D}$ and $\vec{T}$, but parallel to $\vec{W}$ so:
 
 \[ 
-\vec{L} \perp \vec{D}
-\vec{L} \perp \vec{T}
+\vec{L} \perp \vec{D}\\
+\vec{L} \perp \vec{T}\\
 \vec{L} \parallel \vec{W}
-/]
+\]
 
 So if to think in terms of vectorical math we can write our net force of flying airplane like this:
 
 \[ 
 \vec{T} + \vec{D} + \vec{L} + \vec{W} = \vec{F_{\mathrm{net}}} \\ 
-
 \lVert \vec{F_{\mathrm{net}}} \rVert= F_{\mathrm{net}}
-/]
+\]
 
 But we are not masachists to write it in vectors if we can write it just using scalars (which is less intuitive, but easier to calculate later). By knowing vector oriantations we can form triangles, and use pyghogorian theorem:
 
 \[
 F_{\mathrm{net}} = \sqrt{(T-D)^2+(L-W)^2}
-/]
-
+\]
 
 Now we have already a base patter, as for now we need to substitude everything we know:
 
 Therefore, the fully substituted equation is:
 
 \[
-F_{\mathrm{net}} = \sqrt{ \left[ T- \frac12\rho v^2S \left( C_{D_p} + \frac{S}{\pi e b^2} \left( \frac{a_0\alpha} {1+\frac{a_0S}{\pi e b^2}} \right)^2 \right) \right]^2 + \left[ \frac12\rho v^2S \left( \frac{a_0\alpha} {1+\frac{a_0S}{\pi e b^2}} \right) -mg \right]^2
+F_{\mathrm{net}} =
+\sqrt{
+\left[
+T-
+\frac12\rho v^2S
+\left(
+C_{D_p}
++
+\frac{S}{\pi e b^2}
+\left(
+\frac{a_0\alpha}
+{1+\frac{a_0S}{\pi e b^2}}
+\right)^2
+\right)
+\right]^2
++
+\left[
+\frac12\rho v^2S
+\left(
+\frac{a_0\alpha}
+{1+\frac{a_0S}{\pi e b^2}}
+\right)
+-mg
+\right]^2
+}
 \]
 
 Also we can change $T$ to equation of force:
@@ -215,27 +236,51 @@ Also we can change $T$ to equation of force:
 T=m\frac{\Delta v}{\Delta t}
 \]
 
-
 \[
-F_{\mathrm{net}} = \sqrt{ \left[ m\frac{\Delta v}{\Delta t} - \frac12\rho v^2S \left( C_{D_p} + \frac{S}{\pi e b^2} \left( \frac{2\pi\alpha} {1+\frac{2S}{e b^2}} \right)^2 \right) \right]^2 + \left[ \frac12\rho v^2S \left( \frac{2\pi\alpha} {1+\frac{2S}{e b^2}} \right) -mg \right]^2 }
+F_{\mathrm{net}} =
+\sqrt{
+\left[
+m\frac{\Delta v}{\Delta t}
+-
+\frac12\rho v^2S
+\left(
+C_{D_p}
++
+\frac{S}{\pi e b^2}
+\left(
+\frac{2\pi\alpha}
+{1+\frac{2S}{e b^2}}
+\right)^2
+\right)
+\right]^2
++
+\left[
+\frac12\rho v^2S
+\left(
+\frac{2\pi\alpha}
+{1+\frac{2S}{e b^2}}
+\right)
+-mg
+\right]^2
+}
 \]
 
 Then we substitute:
 
 \[
-C_{D_p}=0 $$ 
+C_{D_p}=0
 \]
 
 \[
-e=0.7 $$ 
+e=0.7
 \]
 
 \[
-a_0=2\pi\ \mathrm{rad}^{-1} $$ 
+a_0=2\pi\ \mathrm{rad}^{-1}
 \]
 
 \[
-C_{L0}=0 $$
+C_{L0}=0
 \]
 
 and standard near-sea-level values:
@@ -244,61 +289,142 @@ and standard near-sea-level values:
 \rho=1.225\ \mathrm{kg/m^3}
 \]
 
-\[ 
+\[
 g=9.81\ \mathrm{m/s^2}
 \]
 
 Then:
 
 \[
-\frac12\rho = \frac12(1.225) = 0.6125 
+\frac12\rho = \frac12(1.225) = 0.6125
 \]
 
 and
 
 \[ 
-\frac{a_0S}{\pi e b^2} = \frac{2\pi S}{\pi(0.7)b^2} = \frac{2S}{0.7b^2} = \frac{20S}{7b^2} 
+\frac{a_0S}{\pi e b^2}
+=
+\frac{2\pi S}{\pi(0.7)b^2}
+=
+\frac{2S}{0.7b^2}
+=
+\frac{20S}{7b^2}
 \]
 
 equation becomes:
 
 \[
-F_{\mathrm{net}} = \sqrt{ \left[ m\frac{\Delta v}{\Delta t} - 0.6125v^2S \left( \frac{S}{0.7\pi b^2} \left( \frac{2\pi\alpha} {1+\frac{20S}{7b^2}} \right)^2 \right) \right]^2 + \left[ 0.6125v^2S \left( \frac{2\pi\alpha} {1+\frac{20S}{7b^2}} \right) -9.81mg \right]^2 }
+F_{\mathrm{net}} =
+\sqrt{
+\left[
+m\frac{\Delta v}{\Delta t}
+-
+0.6125v^2S
+\left(
+\frac{S}{0.7\pi b^2}
+\left(
+\frac{2\pi\alpha}
+{1+\frac{20S}{7b^2}}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.6125v^2S
+\left(
+\frac{2\pi\alpha}
+{1+\frac{20S}{7b^2}}
+\right)
+-9.81mg
+\right]^2
+}
 \]
 
 Then we need to choose wing span and area. For wing span I will choose units that are wide enough and easy enough to make on 3d printer:
 
 
 \[ 
-b= 0.20 \text{m} 
+b= 0.20 \text{m}
 \]
 
 \[
-S= 0.0040 m^2
+S= 0.0040\ \mathrm{m^2}
 \]
-
 
 So:
 
 \[
-F_{\mathrm{net}} = \sqrt{ \left[ m\frac{\Delta v}{\Delta t} - 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) -9.81mg \right]^2 }
+F_{\mathrm{net}} =
+\sqrt{
+\left[
+m\frac{\Delta v}{\Delta t}
+-
+0.6125v^2(0.004)
+\left(
+\frac{0.004}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.6125v^2(0.004)
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+-9.81mg
+\right]^2
+}
 \]
 
 And for the purpose of simplicity, let's make it equal to 0, which will be easier to calculate and compare later:
 
 \[ 
-\sqrt{ \left[ m\frac{\Delta v}{\Delta t} - 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) -9.81mg \right]^2 } =0 }
+\sqrt{
+\left[
+m\frac{\Delta v}{\Delta t}
+-
+0.6125v^2(0.004)
+\left(
+\frac{0.004}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.6125v^2(0.004)
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+-9.81mg
+\right]^2
+}=0
 \] 
 
 But this equation can be equal to zero only if both terms are zero:
 
 \[ 
-m\frac{\Delta v}{\Delta t} = 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) 
+m\frac{\Delta v}{\Delta t}
+=
+0.6125v^2(0.004)
+\left(
+\frac{0.004}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right)
 \]
 
-
 \[
-0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) = 9.81mg
+0.6125v^2(0.004)
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+=
+9.81mg
 \]
 
 Now we have only 3 variables left, 2 of them we will find in the next section.
@@ -308,12 +434,32 @@ Now we have only 3 variables left, 2 of them we will find in the next section.
 I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0015 kg. Which we can insert into the equation:
 
 \[
-\sqrt{ \left[ 0.0015\frac{\Delta v}{\Delta t} - 0.6125v^2(0.004) \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.6125v^2(0.004) \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 } =0 
+\sqrt{
+\left[
+0.0015\frac{\Delta v}{\Delta t}
+-
+0.6125v^2(0.004)
+\left(
+\frac{0.004}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.6125v^2(0.004)
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+-0.014715
+\right]^2
+}=0 
 \]
 
 And we can simplify it further.
 
-Since:
+Since: 
 
 \[ 
 0.6125(0.004)=0.00245
@@ -322,34 +468,87 @@ Since:
 we get:
 
 \[
-\sqrt{ \left[ 0.0015\frac{\Delta v}{\Delta t} - 0.00245v^2 \left( \frac{0.004}{0.028\pi} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.00245v^2 \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 } =0 
+\sqrt{
+\left[
+0.0015\frac{\Delta v}{\Delta t}
+-
+0.00245v^2
+\left(
+\frac{0.004}{0.028\pi}
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.00245v^2
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+-0.014715
+\right]^2
+}=0 
 \]
 
 Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$
 
 \[
-v = 10 m/s
+v = 10\ \mathrm{m/s}
 \]
 
 \[
-\frac{\Delta v}{\Delta t} = 50 m/s^2
-/]
+\frac{\Delta v}{\Delta t} = 50\ \mathrm{m/s^2}
+\]
 
 Now we need to find an angle of attack 
 So:
 
 \[
-\sqrt{ \left[ (0.0015)(50) - 0.00245(10)^2 \left( \frac{0.004}{0.7\pi(0.04)} \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right) \right]^2 + \left[ 0.00245(10)^2 \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 }=0
+\sqrt{
+\left[
+(0.0015)(50)
+-
+0.00245(10)^2
+\left(
+\frac{0.004}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.00245(10)^2
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+-0.014715
+\right]^2
+}=0
 \]
+
 Simplify:
 
 \[
-\sqrt{ \left[ 0.075 - 0.01114 \left( \frac{2\pi\alpha}{1.285714} \right)^2 \right]^2 + \left[ 0.245 \left( \frac{2\pi\alpha}{1.285714} \right) -0.014715 \right]^2 }=0 
+\sqrt{
+\left[
+0.075
+-
+0.01114
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)^2
+\right]^2
++
+\left[
+0.245
+\left(
+\frac{2\pi\alpha}{1.285714}
+\right)
+-0.014715
+\right]^2
+}=0 
 \]
-
-
-
-
-
 
 \end{document}

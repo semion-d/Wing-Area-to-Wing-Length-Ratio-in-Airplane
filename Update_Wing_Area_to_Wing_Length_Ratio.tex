@@ -396,34 +396,6 @@ m\frac{\Delta v}{\Delta t}
 }
 \]
 
-And for the purpose of simplicity, let's make it equal to 1, which will be easier to calculate and compare later:
-
-\[ 
-\sqrt{
-\left[
-m\frac{\Delta v}{\Delta t}
--
-0.6125v^2(0.006)
-\left(
-\frac{0.006}{0.7\pi(0.04)}
-\left(
-\frac{2\pi\alpha}{1.428571}
-\right)^2
-\right)
-\right]^2
-+
-\left[
-0.6125v^2(0.006)
-\left(
-\frac{2\pi\alpha}{1.428571}
-\right)
--9.81mg
-\right]^2
-}
-=
-1\ \mathrm{N}
-\] 
-
 Now we have only 3 variables left, 2 of them we will find in the next section.
 
 \subsection{Designing Wide Airplane}
@@ -453,7 +425,7 @@ I designed an airplane (which you can find in this repo) and found that its weig
 \right]^2
 }
 =
-1\ \mathrm{N}
+F_{\mathrm{net}}
 \]
 
 And we can simplify it further.
@@ -489,7 +461,7 @@ we get:
 \right]^2
 }
 =
-1\ \mathrm{N}
+F_{\mathrm{net}}
 \]
 
 Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$
@@ -502,7 +474,7 @@ v = 10\ \mathrm{m/s}
 \frac{\Delta v}{\Delta t} = 50\ \mathrm{m/s^2}
 \]
 
-Now we need to find an angle of attack 
+Now we need to find an angle of attack, and counting that we will make a plastic version of a paper airplane, where wings are flat, we can take 1 degree as an angle of attack (as we can not fully control it, like in paper version)
 So:
 
 \[
@@ -514,7 +486,7 @@ So:
 \left(
 \frac{0.006}{0.7\pi(0.04)}
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi1}{1.428571}
 \right)^2
 \right)
 \right]^2
@@ -522,73 +494,14 @@ So:
 \left[
 0.003675(10)^2
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi1}{1.428571}
 \right)
 -0.02943
 \right]^2
 }
 =
-1\ \mathrm{N}
+F_{\mathrm{net}}
 \]
 
-Simplify:
-
-\[
-\sqrt{
-\left[
-0.15
--
-0.3675
-\left(
-\frac{0.006}{0.7\pi(0.04)}
-\left(
-\frac{2\pi\alpha}{1.428571}
-\right)^2
-\right)
-\right]^2
-+
-\left[
-0.3675
-\left(
-\frac{2\pi\alpha}{1.428571}
-\right)
--0.02943
-\right]^2
-}
-=
-1\ \mathrm{N}
-\]
-
-The final equation was solved numerically to find the angle of attack $\alpha$:
-
-\[
-\sqrt{
-\left[
-0.15
--
-0.3675
-\left(
-\frac{0.006}{0.7\pi(0.04)}
-\left(
-\frac{2\pi\alpha}{1.428571}
-\right)^2
-\right)
-\right]^2
-+
-\left[
-0.3675
-\left(
-\frac{2\pi\alpha}{1.428571}
-\right)
--0.02943
-\right]^2
-}
-=1
-\]
-
-The positive solution is approximately
-\[
-\alpha \approx 0.637\ \text{rad} \approx 36.5^\circ.
-\]
 
 \end{document}

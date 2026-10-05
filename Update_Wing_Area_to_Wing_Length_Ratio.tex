@@ -474,8 +474,15 @@ v = 10\ \mathrm{m/s}
 \frac{\Delta v}{\Delta t} = 50\ \mathrm{m/s^2}
 \]
 
-Now we need to find an angle of attack, and counting that we will make a plastic version of a paper airplane, where wings are flat, we can take 1 degree as an angle of attack (as we can not fully control it, like in paper version)
-So:
+Now we need to choose an angle of attack. Since we are making a plastic
+version of a paper airplane with flat wings, we can use a typical angle
+of attack of $5^\circ$ for the model.
+
+Therefore:
+
+\[
+\alpha = 5^\circ = \frac{5\pi}{180} \approx 0.0873\ \mathrm{rad}
+\]
 
 \[
 \sqrt{
@@ -486,7 +493,7 @@ So:
 \left(
 \frac{0.006}{0.7\pi(0.04)}
 \left(
-\frac{2\pi1}{1.428571}
+\frac{2\pi(0.0873)}{1.428571}
 \right)^2
 \right)
 \right]^2
@@ -494,7 +501,7 @@ So:
 \left[
 0.003675(10)^2
 \left(
-\frac{2\pi1}{1.428571}
+\frac{2\pi(0.0873)}{1.428571}
 \right)
 -0.02943
 \right]^2
@@ -502,6 +509,25 @@ So:
 =
 F_{\mathrm{net}}
 \]
+
+And After simplification we get this: 
+
+
+\[
+F_{\mathrm{net}} = \sqrt{(0.14631)^2+(0.11162)^2} 
+\]
+
+\[
+F_{\mathrm{net}}\approx0.184\text{ N}}
+\]
+
+\[
+F_{\mathrm{net}}\approx0.184\text{ N}}
+\]
+
+In next section we will calculate $F_{\mathrm{net}}$ for narrower airplane, and compare them. 
+
+\subsection{Calculation for a Narrower Airplane}
 
 
 \end{document}

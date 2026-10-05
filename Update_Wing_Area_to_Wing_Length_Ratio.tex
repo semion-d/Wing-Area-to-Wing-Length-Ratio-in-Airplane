@@ -362,11 +362,11 @@ Then we need to choose wing span and area. For wing span I will choose units tha
 
 
 \[ 
-b= 0.20 \text{m}
+b= 0.20\ \mathrm{m}
 \]
 
 \[
-S= 0.0040\ \mathrm{m^2}
+S= 0.0060\ \mathrm{m^2}
 \]
 
 So:
@@ -377,102 +377,83 @@ F_{\mathrm{net}} =
 \left[
 m\frac{\Delta v}{\Delta t}
 -
-0.6125v^2(0.004)
+0.6125v^2(0.006)
 \left(
-\frac{0.004}{0.7\pi(0.04)}
+\frac{0.006}{0.7\pi(0.04)}
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.6125v^2(0.004)
+0.6125v^2(0.006)
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)
 -9.81mg
 \right]^2
 }
 \]
 
-And for the purpose of simplicity, let's make it equal to 0, which will be easier to calculate and compare later:
+And for the purpose of simplicity, let's make it equal to 1, which will be easier to calculate and compare later:
 
 \[ 
 \sqrt{
 \left[
 m\frac{\Delta v}{\Delta t}
 -
-0.6125v^2(0.004)
+0.6125v^2(0.006)
 \left(
-\frac{0.004}{0.7\pi(0.04)}
+\frac{0.006}{0.7\pi(0.04)}
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.6125v^2(0.004)
+0.6125v^2(0.006)
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)
 -9.81mg
 \right]^2
-}=0
+}
+=
+1\ \mathrm{N}
 \] 
-
-But this equation can be equal to zero only if both terms are zero:
-
-\[ 
-m\frac{\Delta v}{\Delta t}
-=
-0.6125v^2(0.004)
-\left(
-\frac{0.004}{0.7\pi(0.04)}
-\left(
-\frac{2\pi\alpha}{1.285714}
-\right)^2
-\right)
-\]
-
-\[
-0.6125v^2(0.004)
-\left(
-\frac{2\pi\alpha}{1.285714}
-\right)
-=
-9.81mg
-\]
 
 Now we have only 3 variables left, 2 of them we will find in the next section.
 
 \subsection{Designing Wide Airplane}
 
-I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0015 kg. Which we can insert into the equation:
+I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.003 kg. Which we can insert into the equation:
 
 \[
 \sqrt{
 \left[
-0.0015\frac{\Delta v}{\Delta t}
+0.003\frac{\Delta v}{\Delta t}
 -
-0.6125v^2(0.004)
+0.6125v^2(0.006)
 \left(
-\frac{0.004}{0.7\pi(0.04)}
+\frac{0.006}{0.7\pi(0.04)}
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.6125v^2(0.004)
+0.6125v^2(0.006)
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)
--0.014715
+-0.02943
 \right]^2
-}=0 
+}
+=
+1\ \mathrm{N}
 \]
 
 And we can simplify it further.
@@ -480,7 +461,7 @@ And we can simplify it further.
 Since: 
 
 \[ 
-0.6125(0.004)=0.00245
+0.6125(0.006)=0.003675
 \]
 
 we get:
@@ -488,25 +469,27 @@ we get:
 \[
 \sqrt{
 \left[
-0.0015\frac{\Delta v}{\Delta t}
+0.003\frac{\Delta v}{\Delta t}
 -
-0.00245v^2
+0.003675v^2
 \left(
-\frac{0.004}{0.028\pi}
+\frac{0.006}{0.028\pi}
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.00245v^2
+0.003675v^2
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)
--0.014715
+-0.02943
 \right]^2
-}=0 
+}
+=
+1\ \mathrm{N}
 \]
 
 Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$
@@ -525,25 +508,27 @@ So:
 \[
 \sqrt{
 \left[
-(0.0015)(50)
+(0.003)(50)
 -
-0.00245(10)^2
+0.003675(10)^2
 \left(
-\frac{0.004}{0.7\pi(0.04)}
+\frac{0.006}{0.7\pi(0.04)}
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.00245(10)^2
+0.003675(10)^2
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)
--0.014715
+-0.02943
 \right]^2
-}=0
+}
+=
+1\ \mathrm{N}
 \]
 
 Simplify:
@@ -551,22 +536,27 @@ Simplify:
 \[
 \sqrt{
 \left[
-0.075
+0.15
 -
-0.01114
+0.3675
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{0.006}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{1.428571}
 \right)^2
+\right)
 \right]^2
 +
 \left[
-0.245
+0.3675
 \left(
-\frac{2\pi\alpha}{1.285714}
+\frac{2\pi\alpha}{1.428571}
 \right)
--0.014715
+-0.02943
 \right]^2
-}=0 
+}
+=
+1\ \mathrm{N}
 \]
 
 \end{document}

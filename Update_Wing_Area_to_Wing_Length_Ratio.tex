@@ -552,6 +552,149 @@ In the next section, we will calculate $F_{\mathrm{net}}$ for a narrower airplan
 
 \subsection{Calculation for a Narrower Airplane}
 
-The only thing that we will change here is $b$, which in turn will affect $AR$.
+The only thing that we will change here is $b$, which in turn will affect $AR$. $S$ should stay the same. For $b$ I chose 20 cm. Mass is the same, as i was able to control it with an infill density on a 3d printer.
+Now what is left to calculate is $F_{\mathrm{net}}$ for a narrower airplane:
+
+
+\[
+b=0.20\ \mathrm{m}
+\]
+
+Therefore:
+
+\[
+AR=\frac{b^2}{S}
+=
+\frac{0.20^2}{0.0225}
+\approx1.7778
+\]
+
+The denominator in the lift coefficient becomes:
+
+\[
+1+\frac{2S}{eb^2}
+=
+1+\frac{2(0.0225)}{0.7(0.20)^2}
+\approx2.607143
+\]
+
+Therefore, the net force equation becomes:
+
+\[
+F_{\mathrm{net}} =
+\sqrt{
+\left[
+0.0205\frac{\Delta v}{\Delta t}
+-
+0.6125v^2(0.0225)
+\left(
+\frac{0.0225}{0.7\pi(0.04)}
+\left(
+\frac{2\pi\alpha}{2.607143}
+\right)^2
+\right)
+\right]^2
++
+\left[
+0.6125v^2(0.0225)
+\left(
+\frac{2\pi\alpha}{2.607143}
+\right)
+-0.201105
+\right]^2
+}
+\]
+
+Using:
+
+\[
+v=10\ \mathrm{m/s}
+\]
+
+\[
+\frac{\Delta v}{\Delta t}=50\ \mathrm{m/s^2}
+\]
+
+and:
+
+\[
+\alpha=5^\circ
+=
+\frac{5\pi}{180}
+\approx0.0873\ \mathrm{rad}
+\]
+
+we get:
+
+\[
+L=
+0.01378125(10)^2
+\left(
+\frac{2\pi(0.0873)}{2.607143}
+\right)
+\]
+
+\[
+L\approx0.2900\ \mathrm{N}
+\]
+
+Next, we calculate the induced drag:
+
+\[
+D=
+0.01378125(10)^2
+\left(
+\frac{0.0225}{0.7\pi(0.04)}
+\left(
+\frac{2\pi(0.0873)}{2.607143}
+\right)^2
+\right)
+\]
+
+\[
+D\approx0.01858\ \mathrm{N}
+\]
+
+The thrust remains the same:
+
+\[
+T=(0.0205)(50)=1.025\ \mathrm{N}
+\]
+
+and the weight remains:
+
+\[
+W=(0.0205)(9.81)=0.201105\ \mathrm{N}
+\]
+
+Therefore:
+
+\[
+F_x=T-D
+=
+1.025-0.01858
+=
+1.00642\ \mathrm{N}
+\]
+
+\[
+F_y=L-W
+=
+0.2900-0.201105
+=
+0.08890\ \mathrm{N}
+\]
+
+Finally:
+
+\[
+F_{\mathrm{net}}
+=
+\sqrt{(1.00642)^2+(0.08890)^2}
+\]
+
+\[
+F_{\mathrm{net}}\approx1.010\ \mathrm{N}
+\]
 
 \end{document}

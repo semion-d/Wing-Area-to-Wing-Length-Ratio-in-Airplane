@@ -360,13 +360,12 @@ m\frac{\Delta v}{\Delta t}
 
 Then we need to choose wing span and area. For wing span I will choose units that are wide enough and easy enough to make on 3d printer:
 
-
-\[ 
-b= 0.20\ \mathrm{m}
+\[
+b=0.30\ \mathrm{m}
 \]
 
 \[
-S= 0.0060\ \mathrm{m^2}
+S=0.0225\ \mathrm{m^2}
 \]
 
 So:
@@ -377,19 +376,19 @@ F_{\mathrm{net}} =
 \left[
 m\frac{\Delta v}{\Delta t}
 -
-0.6125v^2(0.006)
+0.6125v^2(0.0225)
 \left(
-\frac{0.006}{0.7\pi(0.04)}
+\frac{0.0225}{0.7\pi(0.09)}
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi\alpha}{1.714286}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.6125v^2(0.006)
+0.6125v^2(0.0225)
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi\alpha}{1.714286}
 \right)
 -9.81mg
 \right]^2
@@ -400,28 +399,28 @@ Now we have only 3 variables left, 2 of them we will find in the next section.
 
 \subsection{Designing Wide Airplane}
 
-I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.003 kg. Which we can insert into the equation:
+I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0205 kg. Which we can insert into the equation:
 
 \[
 \sqrt{
 \left[
-0.003\frac{\Delta v}{\Delta t}
+0.0205\frac{\Delta v}{\Delta t}
 -
-0.6125v^2(0.006)
+0.6125v^2(0.0225)
 \left(
-\frac{0.006}{0.7\pi(0.04)}
+\frac{0.0225}{0.7\pi(0.09)}
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi\alpha}{1.714286}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.6125v^2(0.006)
+0.6125v^2(0.0225)
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi\alpha}{1.714286}
 \right)
--0.02943
+-0.201105
 \right]^2
 }
 =
@@ -430,10 +429,10 @@ F_{\mathrm{net}}
 
 And we can simplify it further.
 
-Since: 
+Since:
 
-\[ 
-0.6125(0.006)=0.003675
+\[
+0.6125(0.0225)=0.01378125
 \]
 
 we get:
@@ -441,37 +440,37 @@ we get:
 \[
 \sqrt{
 \left[
-0.003\frac{\Delta v}{\Delta t}
+0.0205\frac{\Delta v}{\Delta t}
 -
-0.003675v^2
+0.01378125v^2
 \left(
-\frac{0.006}{0.028\pi}
+\frac{0.0225}{0.063\pi}
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi\alpha}{1.714286}
 \right)^2
 \right)
 \right]^2
 +
 \left[
-0.003675v^2
+0.01378125v^2
 \left(
-\frac{2\pi\alpha}{1.428571}
+\frac{2\pi\alpha}{1.714286}
 \right)
--0.02943
+-0.201105
 \right]^2
 }
 =
 F_{\mathrm{net}}
 \]
 
-Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$
+Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$.
 
 \[
-v = 10\ \mathrm{m/s}
+v=10\ \mathrm{m/s}
 \]
 
 \[
-\frac{\Delta v}{\Delta t} = 50\ \mathrm{m/s^2}
+\frac{\Delta v}{\Delta t}=50\ \mathrm{m/s^2}
 \]
 
 Now we need to choose an angle of attack. Since we are making a plastic
@@ -481,43 +480,72 @@ of attack of $5^\circ$ for the model.
 Therefore:
 
 \[
-\alpha = 5^\circ = \frac{5\pi}{180} \approx 0.0873\ \mathrm{rad}
+\alpha=5^\circ=\frac{5\pi}{180}\approx0.0873\ \mathrm{rad}
+\]
+
+First, we calculate the lift:
+
+\[
+L=
+0.01378125(10)^2
+\left(
+\frac{2\pi(0.0873)}{1.714286}
+\right)
 \]
 
 \[
-\sqrt{
-\left[
-(0.003)(50)
--
-0.003675(10)^2
+L\approx0.44096\ \mathrm{N}
+\]
+
+Next, we calculate the induced drag:
+
+\[
+D=
+0.01378125(10)^2
 \left(
-\frac{0.006}{0.7\pi(0.04)}
+\frac{0.0225}{0.7\pi(0.09)}
 \left(
-\frac{2\pi(0.0873)}{1.428571}
+\frac{2\pi(0.0873)}{1.714286}
 \right)^2
 \right)
-\right]^2
-+
-\left[
-0.003675(10)^2
-\left(
-\frac{2\pi(0.0873)}{1.428571}
-\right)
--0.02943
-\right]^2
-}
-=
+\]
+
+\[
+D\approx0.01604\ \mathrm{N}
+\]
+
+The thrust is:
+
+\[
+T=(0.0205)(50)=1.025\ \mathrm{N}
+\]
+
+and the weight is:
+
+\[
+W=(0.0205)(9.81)=0.201105\ \mathrm{N}
+\]
+
+Therefore, the horizontal and vertical components of the net force are:
+
+\[
+F_x=T-D=1.025-0.01604=1.00896\ \mathrm{N}
+\]
+
+\[
+F_y=L-W=0.44096-0.201105=0.23986\ \mathrm{N}
+\]
+
+Finally:
+
+\[
 F_{\mathrm{net}}
-\]
-
-And after simplification, we get:
-
-\[
-F_{\mathrm{net}} = \sqrt{(0.14631)^2+(0.11162)^2}
+=
+\sqrt{(1.00896)^2+(0.23986)^2}
 \]
 
 \[
-F_{\mathrm{net}}\approx0.184\ \mathrm{N}
+\boxed{F_{\mathrm{net}}\approx1.037\ \mathrm{N}}
 \]
 
 In the next section, we will calculate $F_{\mathrm{net}}$ for a narrower airplane and compare them.

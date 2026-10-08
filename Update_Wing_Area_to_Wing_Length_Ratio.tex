@@ -118,7 +118,7 @@ AR = \text{aspect ratio}
 $a_0$ tells you how quickly the lift coefficient $C_L$ changes with angle of attack for an idealized wing cross-section extending infinitely in the spanwise direction (I was not expecting that I would write something so clever). But considering that the wing is a finite region, air starts to behave differently, creating friction and drag, which is included and considered in $a$. For our project, $a_0$ will be:
 
 \[
-\boxed{a_0 \approx 2\pi\ \mathrm{rad}^{-1}}
+a_0 \approx 2\pi\ \mathrm{rad}^{-1}
 \]
 
 Next is $e$, which tells us how efficiently a real finite wing produces lift compared with an ideal wing. It is a scalar from 0 to 1 and usually lies between 0.7 and 1. For this experiment, we will choose 0.7, which is usual for flat wings.
@@ -126,22 +126,20 @@ Next is $e$, which tells us how efficiently a real finite wing produces lift com
 Our plane will also experience drag, which we cannot ignore, so here is the formula:
 
 \[
-\boxed{C_D = C_{D_p} + C_{D_i}}
+C_D = C_{D_p} + C_{D_i}
 \]
 
 \[
-\boxed{C_D = C_{D_p} + \frac{C_L^2}{\pi e AR}}
+C_D = C_{D_p} + \frac{C_L^2}{\pi e AR}
 \]
 
 And consequently:
 
 \[
-\boxed{
 D = \frac{1}{2}\rho v^2 S
 \left(
 C_{D_p} + \frac{C_L^2}{\pi e AR}
 \right)
-}
 \]
 
 \renewcommand{\arraystretch}{2}
@@ -171,7 +169,7 @@ AR = \frac{b^2}{S}
 
 $AR$ is the aspect ratio, which represents the relationship between wing area $S$ and wingspan $b$, which is the distance from one tip of the wing to another. This formula will help us to separate the 2 prototypes on a mathematical level.
 
-\subsection{Calculation of Characteristics for Wide Airplane}
+\subsection{Calculations for a Wide Airplane}
 
 We need to remember that we have 4 main forces acting upon this object.
 \[ 
@@ -399,11 +397,7 @@ m\frac{\Delta v}{\Delta t}
 }
 \]
 
-Now we have only 3 variables left, 2 of them we will find in the next section.
-
-\subsection{Designing Wide Airplane}
-
-I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0205 kg. Which we can insert into the equation:
+Then I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0205 kg. Which we can insert into the equation:
 
 \[
 \sqrt{
@@ -547,12 +541,12 @@ F_{\mathrm{net}}
 \]
 
 \[
-\boxed{F_{\mathrm{net}}\approx1.037\ \mathrm{N}}
+F_{\mathrm{net}}\approx1.037\ \mathrm{N}
 \]
 
 In the next section, we will calculate $F_{\mathrm{net}}$ for a narrower airplane and compare them.
 
-\subsection{Calculation for a Narrower Airplane}
+\subsection{Calculations for a Narrower Airplane}
 
 The only thing that we will change here is $b$, which in turn will affect $AR$. $S$ should stay the same. For $b$, I chose 20 cm. The mass is the same, as I was able to control it with the infill density of a 3D printer.
 Now what is left to calculate is $F_{\mathrm{net}}$ for a narrower airplane:
@@ -745,7 +739,7 @@ The center of mass here is located behind the center of a $y$ - $z$ plane slice,
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings_and_3dmodel/Plane_N_PDF_001_Rev_C.pdf}
-    \caption{Plane N PDF -- 001 Rev F (Narrow Plane).}
+    \caption{Plane N PDF -- 001 Rev C (Narrow Plane).}
     \label{fig:plane-w-drawing}
 \end{figure}
 

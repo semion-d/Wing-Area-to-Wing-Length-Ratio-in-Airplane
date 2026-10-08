@@ -337,6 +337,8 @@ the equation becomes:
 \[
 F_{\mathrm{net}} =
 \sqrt{
+\begin{aligned}
+&
 \left[
 m\frac{\Delta v}{\Delta t}
 -
@@ -349,15 +351,17 @@ m\frac{\Delta v}{\Delta t}
 \right)^2
 \right)
 \right]^2
-+
+\\[2mm]
+&\quad+
 \left[
 0.6125v^2S
 \left(
 \frac{2\pi\alpha}
 {1+\frac{20S}{7b^2}}
 \right)
--9.81mg
+-9.81m
 \right]^2
+\end{aligned}
 }
 \]
 
@@ -393,7 +397,7 @@ m\frac{\Delta v}{\Delta t}
 \left(
 \frac{2\pi\alpha}{1.714286}
 \right)
--9.81mg
+-9.81m
 \right]^2
 }
 \]
@@ -550,7 +554,7 @@ F_{\mathrm{net}}
 \]
 
 \[
-F_{\mathrm{net}}\approx1.037\ \mathrm{N}
+F_{\mathrm{net}}\approx1.03708\ \mathrm{N}
 \]
 
 In the next section, we will calculate $F_{\mathrm{net}}$ for a narrower airplane and compare them.
@@ -611,6 +615,7 @@ Therefore, the net force equation becomes:
 \right]^2
 \end{aligned}
 }
+= F_{\mathrm{net}}
 \]
 
 Using:
@@ -643,7 +648,7 @@ L=
 \]
 
 \[
-L\approx0.2898\ \mathrm{N}
+L\approx0.28995\ \mathrm{N}
 \]
 
 Next, we calculate the induced drag:
@@ -660,7 +665,7 @@ D=
 \]
 
 \[
-D\approx0.01559\ \mathrm{N}
+D\approx0.01560\ \mathrm{N}
 \]
 
 The thrust remains the same:
@@ -680,17 +685,17 @@ Therefore:
 \[
 F_x=T-D
 =
-1.025-0.01559
+1.025-0.01560
 =
-1.00941\ \mathrm{N}
+1.00940\ \mathrm{N}
 \]
 
 \[
 F_y=L-W
 =
-0.2898-0.201105
+0.28995-0.201105
 =
-0.08873\ \mathrm{N}
+0.08884\ \mathrm{N}
 \]
 
 Finally:
@@ -698,11 +703,11 @@ Finally:
 \[
 F_{\mathrm{net}}
 =
-\sqrt{(1.00941)^2+(0.08873)^2}
+\sqrt{(1.00940)^2+(0.08884)^2}
 \]
 
 \[
-F_{\mathrm{net}}\approx1.0133\ \mathrm{N}
+F_{\mathrm{net}}\approx1.01330\ \mathrm{N}
 \]
 
 \subsection{Hypothesis Conclusion}
@@ -710,17 +715,17 @@ F_{\mathrm{net}}\approx1.0133\ \mathrm{N}
 We calculated $F_{\mathrm{net}}$ for 2 planes with the same mass and wing area, but with a different $b$, which is the wingspan.
 
 \[
-F_{\mathrm{net,wide}}\approx1.037\ \mathrm N
+F_{\mathrm{net,wide}}\approx1.03708\ \mathrm N
 \]
 
 \[
-F_{\mathrm{net,narrow}}\approx1.0133\ \mathrm N
+F_{\mathrm{net,narrow}}\approx1.01330\ \mathrm N
 \]
 
 And we can conclude that:
 
 \[
-F_{\mathrm{net,wide}}\approx1.037\ > F_{\mathrm{net,narrow}}\approx1.0133\
+F_{\mathrm{net,wide}}\approx1.03708\ > F_{\mathrm{net,narrow}}\approx1.01330
 \]
 
 This means that the wide plane has a greater $F_{\mathrm{net}}$ right after launch, right after I release my plane, which will allow it to fly longer.
@@ -813,4 +818,9 @@ So:
 
 In conclusion, according to my calculations and experiment, planes with bigger $b$, $AR$, or wingspan have greater $F_{\mathrm{net}}$, which results in a longer flight distance.
 
+\bigskip
+
+\[
+*******************
+\]
 \end{document}

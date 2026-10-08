@@ -172,6 +172,7 @@ $AR$ is the aspect ratio, which represents the relationship between wing area $S
 \subsection{Calculations for a Wide Airplane}
 
 We need to remember that we have 4 main forces acting upon this object.
+
 \[ 
 \vec{L} = \textbf{Lift}\\
 \]
@@ -400,6 +401,9 @@ m\frac{\Delta v}{\Delta t}
 Then I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0205 kg. Which we can insert into the equation:
 
 \[
+\begin{aligned}
+F_{\mathrm{net}}
+&=
 \sqrt{
 \left[
 0.0205\frac{\Delta v}{\Delta t}
@@ -412,7 +416,8 @@ Then I designed an airplane (which you can find in this repo) and found that its
 \right)^2
 \right)
 \right]^2
-+
+\\
+&\qquad+
 \left[
 0.6125v^2(0.0225)
 \left(
@@ -421,8 +426,7 @@ Then I designed an airplane (which you can find in this repo) and found that its
 -0.201105
 \right]^2
 }
-=
-F_{\mathrm{net}}
+\end{aligned}
 \]
 
 And we can simplify it further.
@@ -436,6 +440,9 @@ Since:
 we get:
 
 \[
+\begin{aligned}
+F_{\mathrm{net}}
+&=
 \sqrt{
 \left[
 0.0205\frac{\Delta v}{\Delta t}
@@ -448,7 +455,8 @@ we get:
 \right)^2
 \right)
 \right]^2
-+
+\\
+&\qquad+
 \left[
 0.01378125v^2
 \left(
@@ -457,8 +465,7 @@ we get:
 -0.201105
 \right]^2
 }
-=
-F_{\mathrm{net}}
+\end{aligned}
 \]
 
 Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$.
@@ -549,6 +556,7 @@ In the next section, we will calculate $F_{\mathrm{net}}$ for a narrower airplan
 \subsection{Calculations for a Narrower Airplane}
 
 The only thing that we will change here is $b$, which in turn will affect $AR$. $S$ should stay the same. For $b$, I chose 20 cm. The mass is the same, as I was able to control it with the infill density of a 3D printer.
+
 Now what is left to calculate is $F_{\mathrm{net}}$ for a narrower airplane:
 
 \[
@@ -576,7 +584,9 @@ The denominator in the lift coefficient becomes:
 Therefore, the net force equation becomes:
 
 \[
-F_{\mathrm{net}} =
+\begin{aligned}
+F_{\mathrm{net}}
+&=
 \sqrt{
 \left[
 0.0205\frac{\Delta v}{\Delta t}
@@ -589,7 +599,8 @@ F_{\mathrm{net}} =
 \right)^2
 \right)
 \right]^2
-+
+\\
+&\qquad+
 \left[
 0.6125v^2(0.0225)
 \left(
@@ -598,6 +609,7 @@ F_{\mathrm{net}} =
 -0.201105
 \right]^2
 }
+\end{aligned}
 \]
 
 Using:
@@ -724,8 +736,6 @@ I tried many things before getting these planes to fly. The biggest problem was 
     \caption{Plane W PDF -- 001 Rev A.}
     \label{fig:plane-w-drawing}
 \end{figure}
-
-
 
 The center of mass here is located behind the center of a $y$ - $z$ plane slice, and rushing air forces the back to fall and the front to rise, twisting the plane. And that's why I added more material to the front, in order to move the center of mass to the front and stabilize the plane during the flight. And this is the result of my fight with engineering and nature:
 

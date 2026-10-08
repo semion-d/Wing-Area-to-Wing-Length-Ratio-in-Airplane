@@ -378,11 +378,9 @@ S=0.0225\ \mathrm{m^2}
 So:
 
 \[
-F_{\mathrm{net}} =
-\sqrt{
 \begin{aligned}
-&
-\left[
+F_x
+&=
 m\frac{\Delta v}{\Delta t}
 -
 0.6125v^2(0.0225)
@@ -392,17 +390,21 @@ m\frac{\Delta v}{\Delta t}
 \frac{2\pi\alpha}{1.714286}
 \right)^2
 \right)
-\right]^2
-+
-\left[
+\\[2mm]
+F_y
+&=
 0.6125v^2(0.0225)
 \left(
 \frac{2\pi\alpha}{1.714286}
 \right)
 -9.81m
-\right]^2
 \end{aligned}
-}
+\]
+
+\[
+F_{\mathrm{net}}
+=
+\sqrt{F_x^2+F_y^2}
 \]
 
 Then I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0205 kg. Which we can insert into the equation:

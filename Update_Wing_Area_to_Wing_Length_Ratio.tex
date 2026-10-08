@@ -401,10 +401,9 @@ m\frac{\Delta v}{\Delta t}
 Then I designed an airplane (which you can find in this repo) and found that its weight is approximately 0.0205 kg. Which we can insert into the equation:
 
 \[
-\begin{aligned}
-F_{\mathrm{net}}
-&=
 \sqrt{
+\begin{aligned}
+&
 \left[
 0.0205\frac{\Delta v}{\Delta t}
 -
@@ -416,8 +415,8 @@ F_{\mathrm{net}}
 \right)^2
 \right)
 \right]^2
-\\
-&\qquad+
+\\[2mm]
+&\quad+
 \left[
 0.6125v^2(0.0225)
 \left(
@@ -425,8 +424,10 @@ F_{\mathrm{net}}
 \right)
 -0.201105
 \right]^2
-}
 \end{aligned}
+}
+=
+F_{\mathrm{net}}
 \]
 
 And we can simplify it further.
@@ -440,10 +441,9 @@ Since:
 we get:
 
 \[
-\begin{aligned}
-F_{\mathrm{net}}
-&=
 \sqrt{
+\begin{aligned}
+&
 \left[
 0.0205\frac{\Delta v}{\Delta t}
 -
@@ -455,8 +455,8 @@ F_{\mathrm{net}}
 \right)^2
 \right)
 \right]^2
-\\
-&\qquad+
+\\[2mm]
+&\quad+
 \left[
 0.01378125v^2
 \left(
@@ -464,8 +464,10 @@ F_{\mathrm{net}}
 \right)
 -0.201105
 \right]^2
-}
 \end{aligned}
+}
+=
+F_{\mathrm{net}}
 \]
 
 Now we need to choose $v$, $\alpha$ and $\frac{\Delta v}{\Delta t}$.
@@ -584,10 +586,9 @@ The denominator in the lift coefficient becomes:
 Therefore, the net force equation becomes:
 
 \[
-\begin{aligned}
-F_{\mathrm{net}}
-&=
 \sqrt{
+\begin{aligned}
+&
 \left[
 0.0205\frac{\Delta v}{\Delta t}
 -
@@ -599,8 +600,8 @@ F_{\mathrm{net}}
 \right)^2
 \right)
 \right]^2
-\\
-&\qquad+
+\\[2mm]
+&\quad+
 \left[
 0.6125v^2(0.0225)
 \left(
@@ -608,8 +609,8 @@ F_{\mathrm{net}}
 \right)
 -0.201105
 \right]^2
-}
 \end{aligned}
+}
 \]
 
 Using:
@@ -734,23 +735,23 @@ I tried many things before getting these planes to fly. The biggest problem was 
     \centering
     \includegraphics[width=\textwidth]{drawings_and_3dmodel/Plane_W_PDF_001_Rev_A.pdf}
     \caption{Plane W PDF -- 001 Rev A.}
-    \label{fig:plane-w-drawing}
+    \label{fig:plane-w-rev-a}
 \end{figure}
 
-The center of mass here is located behind the center of a $y$ - $z$ plane slice, and rushing air forces the back to fall and the front to rise, twisting the plane. And that's why I added more material to the front, in order to move the center of mass to the front and stabilize the plane during the flight. And this is the result of my fight with engineering and nature:
+The center of mass here is located behind the center of a $y$-$z$ plane slice, and rushing air forces the back to fall and the front to rise, twisting the plane. And that's why I added more material to the front, in order to move the center of mass to the front and stabilize the plane during the flight. And this is the result of my fight with engineering and nature:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings_and_3dmodel/Plane_W_PDF_001_Rev_F.pdf}
     \caption{Plane W PDF -- 001 Rev F (Wide Plane).}
-    \label{fig:plane-w-drawing}
+    \label{fig:plane-w-rev-f}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{drawings_and_3dmodel/Plane_N_PDF_001_Rev_C.pdf}
     \caption{Plane N PDF -- 001 Rev C (Narrow Plane).}
-    \label{fig:plane-w-drawing}
+    \label{fig:plane-n-rev-c}
 \end{figure}
 
 \subsection{Experiment Results}

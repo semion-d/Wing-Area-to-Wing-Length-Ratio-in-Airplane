@@ -17,7 +17,7 @@
 
 \section{Introduction} 
 
-Let's say we have 2 paper airplanes, one of them is really long, but at the same time narrow, and on the other hand we have a short but wide airplane. Both of them have the same wing area. The question is: what will fly longer and over longer distances, and what will be more effective? This will be a problem to solve in this short essay. It will be divided into 3 main parts: Hypothesis, which will make a prediction of the outcome based on math, physics and logic; next is an experiment, which will check the hypothesis; and the last one is the conclusion, which will summarize everything into a simple logic-math statement.   
+Let's say we have 2 paper airplanes. One of them is really long but narrow, while the other is short but wide. Both of them have the same wing area. The question is: which one will fly longer and over a greater distance, and which one will be more effective? This is the problem I will investigate in this short essay. It will be divided into 3 main parts: the Hypothesis, which will make a prediction of the outcome based on math, physics, and logic; next is the Experiment, which will test the hypothesis; and the last one is the Conclusion, which will summarize everything in a simple logic-math statement.
 
 \[
 ***********************
@@ -31,7 +31,7 @@ Let's say we have 2 paper airplanes, one of them is really long, but at the same
 
 \subsection{Forces}
 
-At first we need to define the forces that act upon a complex airplane-looking object. 
+First, we need to define the forces that act upon this complex airplane-like object.
 
 Here is the list:
 
@@ -54,9 +54,9 @@ Here is the list:
 
 \vspace{5mm}
 
-In this case we will not use thrust for several reasons: it does not affect the efficiency of the airplane itself, it just creates a continuous kinetic energy input; and it is harder to simulate on a small experimental scale. The only way where thrust will be included is the power input when we throw the airplane. So what's left is Gravity (or weight), Lift, and Drag.
+In this case, we will not use thrust for several reasons: it does not affect the efficiency of the airplane itself, it just creates a continuous kinetic energy input; and it is harder to simulate on a small experimental scale. The only situation in which thrust will be included is the power input when we throw the airplane. So, what's left is Gravity (or weight), Lift, and Drag.
 
-Lift is a force that pushes the plane upwards. It happens because the area under the wing has higher air pressure than the top, and this pressure difference moves the airplane up. It is calculated through this formula:
+Lift is a force that pushes the plane upward. It happens because the area under the wing has higher air pressure than the top, and this pressure difference moves the airplane up. It is calculated through this formula:
 
 \[
 L = \frac{1}{2}\rho v^2 S C_L
@@ -83,15 +83,15 @@ L = \frac{1}{2}\rho v^2 S C_L
 
 \vspace{5mm}
 
-$C_L$ is a scalar from 0 to 1 and combines in itself many wing parameters, one of the main of them is an angle of attack of the wing $\alpha$ and it represents the angle of the wing. Here is the formula for it:
+$C_L$ is a scalar from 0 to 1 and combines in itself many wing parameters. One of the main ones is the angle of attack of the wing $\alpha$, and it represents the angle of the wing. Here is the formula for it:
 
 \[
 C_L = C_{L0} + a\alpha
 \]
 
-$a$ is the lift-curve slope, and in general it tells us the speed at which $C_L$ grows when $\alpha$ grows. Basically it is the dirivitive of a linear function $C_L$. $C_{L0}$ is the lift coefficient at \(0^\circ\) angle of attack, which might be positive or negative, but in this case we will consider this equal to 0.
+$a$ is the lift-curve slope, and in general, it tells us the speed at which $C_L$ grows when $\alpha$ grows. Basically, it is the derivative of a linear function $C_L$. $C_{L0}$ is the lift coefficient at \(0^\circ\) angle of attack, which might be positive or negative, but in this case, we will consider this equal to 0.
 
-To calculate lift-curve slope we can use this formula:
+To calculate the lift-curve slope, we can use this formula:
 
 \[
 a = \frac{a_0}{1+\frac{a_0}{\pi e AR}}
@@ -115,15 +115,15 @@ e = \text{Oswald efficiency factor}
 AR = \text{aspect ratio}
 \]
 
-$a_0$ tells you how quickly the lift coefficient $C_L$ changes with angle of attack for an idealized wing cross-section extending infinitely in the spanwise direction (was not expecting that i will write smth so clever). But counting that wing is a finite region, air starts to behave differently, creating friction and drag, which is included and considered in $a$. For our project $a_0$ will be:
+$a_0$ tells you how quickly the lift coefficient $C_L$ changes with angle of attack for an idealized wing cross-section extending infinitely in the spanwise direction (I was not expecting that I would write something so clever). But considering that the wing is a finite region, air starts to behave differently, creating friction and drag, which is included and considered in $a$. For our project, $a_0$ will be:
 
 \[
 \boxed{a_0 \approx 2\pi\ \mathrm{rad}^{-1}}
 \]
 
-Next one is $e$ whcih tells us how efficiently a real finite wing produces lift compared with an ideal wing. It is scalar from 0 to 1 and usually lies between 0.7 ad 1, for this experiment we will chose 0.7, which is usual for flat wings. 
+Next is $e$, which tells us how efficiently a real finite wing produces lift compared with an ideal wing. It is a scalar from 0 to 1 and usually lies between 0.7 and 1. For this experiment, we will choose 0.7, which is usual for flat wings.
 
-Our plane will also expirience drag, which we can not ignore, so here is the formula:
+Our plane will also experience drag, which we cannot ignore, so here is the formula:
 
 \[
 \boxed{C_D = C_{D_p} + C_{D_i}}
@@ -163,13 +163,13 @@ $AR$ & Wing aspect ratio & Dimensionless \\
 \end{tabular}
 \end{center}
 
-Before actually calculating parameters of our 2 prototypes we need to establish the difference between them using math. Engineers did it already long time ago and came up with this fromula:
+Before actually calculating the parameters of our 2 prototypes, we need to establish the difference between them using math. Engineers did this a long time ago and came up with this formula:
 
 \[
 AR = \frac{b^2}{S}
 \]
 
-$AR$ is the apect ratio, which represents the relationship between wing area $S$ and wing span $b$ which is a distance from one tip of the wing to another. This formula will help us to separate 2 ptototypes on a mathematical level. 
+$AR$ is the aspect ratio, which represents the relationship between wing area $S$ and wingspan $b$, which is the distance from one tip of the wing to another. This formula will help us to separate the 2 prototypes on a mathematical level.
 
 \subsection{Calculation of Characteristics for Wide Airplane}
 
@@ -190,7 +190,7 @@ We need to remember that we have 4 main forces acting upon this object.
 \vec{W} = \textbf{Gravity}
 \]
 
-We know that $\vec{L}$ is perpendicular to $\vec{D}$ and $\vec{T}$, but parallel to $\vec{W}$ so:
+We know that $\vec{L}$ is perpendicular to $\vec{D}$ and $\vec{T}$, but parallel to $\vec{W}$, so:
 
 \[ 
 \vec{L} \perp \vec{D}\\
@@ -204,23 +204,23 @@ We know that $\vec{L}$ is perpendicular to $\vec{D}$ and $\vec{T}$, but parallel
 \vec{L} \parallel \vec{W}
 \]
 
-So if to think in terms of vectorical math we can write our net force of flying airplane like this:
+So, if we think in terms of vector mathematics, we can write our net force of the flying airplane like this:
 
 \[ 
-\vec{T} + \vec{D} + \vec{L} + \vec{W} = \vec{F_{\mathrm{net}}} \\ 
+\vec{T} + \vec{D} + \vec{L} + \vec{W} = \vec{F_{\mathrm{net}}} 
 \]
 
 \[
 \lVert \vec{F_{\mathrm{net}}} \rVert= F_{\mathrm{net}}
 \]
 
-But we are not masachists to write it in vectors if we can write it just using scalars (which is less intuitive, but easier to calculate later). By knowing vector oriantations we can form triangles, and use pyghogorian theorem:
+But we are not masochists to write it in vectors if we can write it just using scalars (which is less intuitive, but easier to calculate later). By knowing the vector orientations, we can form triangles and use the Pythagorean theorem:
 
 \[
 F_{\mathrm{net}} = \sqrt{(T-D)^2+(L-W)^2}
 \]
 
-Now we have already a base patter, as for now we need to substitude everything we know:
+Now we already have a basic pattern. For now, we need to substitute everything we know:
 
 Therefore, the fully substituted equation is:
 
@@ -252,7 +252,7 @@ C_{D_p}
 }
 \]
 
-Also we can change $T$ to equation of force:
+Also, we can change $T$ to the equation for force:
 
 \[
 T=m\frac{\Delta v}{\Delta t}
@@ -333,7 +333,7 @@ and
 \frac{20S}{7b^2}
 \]
 
-equation becomes:
+the equation becomes:
 
 \[
 F_{\mathrm{net}} =
@@ -362,7 +362,7 @@ m\frac{\Delta v}{\Delta t}
 }
 \]
 
-Then we need to choose wing span and area. For wing span I will choose units that are wide enough and easy enough to make on 3d printer:
+Then we need to choose the wingspan and area. For the wingspan, I will choose dimensions that are wide enough and easy enough to make on a 3D printer:
 
 \[
 b=0.30\ \mathrm{m}
@@ -477,9 +477,7 @@ v=10\ \mathrm{m/s}
 \frac{\Delta v}{\Delta t}=50\ \mathrm{m/s^2}
 \]
 
-Now we need to choose an angle of attack. Since we are making a plastic
-version of a paper airplane with flat wings, we can use a typical angle
-of attack of $5^\circ$ for the model.
+Now we need to choose an angle of attack. Since we are making a plastic version of a paper airplane with flat wings, we can use a typical angle of attack of $5^\circ$ for the model.
 
 Therefore:
 
@@ -556,9 +554,8 @@ In the next section, we will calculate $F_{\mathrm{net}}$ for a narrower airplan
 
 \subsection{Calculation for a Narrower Airplane}
 
-The only thing that we will change here is $b$, which in turn will affect $AR$. $S$ should stay the same. For $b$ I chose 20 cm. Mass is the same, as i was able to control it with an infill density on a 3d printer.
+The only thing that we will change here is $b$, which in turn will affect $AR$. $S$ should stay the same. For $b$, I chose 20 cm. The mass is the same, as I was able to control it with the infill density of a 3D printer.
 Now what is left to calculate is $F_{\mathrm{net}}$ for a narrower airplane:
-
 
 \[
 b=0.20\ \mathrm{m}
@@ -701,9 +698,9 @@ F_{\mathrm{net}}
 F_{\mathrm{net}}\approx1.0133\ \mathrm{N}
 \]
 
-\subsection{Hypothesys Conclusion}
+\subsection{Hypothesis Conclusion}
 
-We calculated $F_{\mathrm{net}}$ for 2 planes with the same mass and wing area, but with a different $b$, which is a wingspan. 
+We calculated $F_{\mathrm{net}}$ for 2 planes with the same mass and wing area, but with a different $b$, which is the wingspan.
 
 \[
 F_{\mathrm{net,wide}}\approx1.037\ \mathrm N
@@ -719,13 +716,13 @@ And we can conclude that:
 F_{\mathrm{net,wide}}\approx1.037\ > F_{\mathrm{net,narrow}}\approx1.0133\
 \]
 
-Meaning that wide plane has a greater $F_{\mathrm{net}}$ right after the lounch, right after when I releaze my plane, which will allow it to fly longer. 
+This means that the wide plane has a greater $F_{\mathrm{net}}$ right after launch, right after I release my plane, which will allow it to fly longer.
 
 \section{Experiment}
 
 \subsection{Plane design}
 
-I tried many things before making these planes fly, the biggest problem was the center of mass. In my early stages of developmend planes after the lounch twisted back and fell, like this one:
+I tried many things before getting these planes to fly. The biggest problem was the center of mass. During the early stages of development, the planes twisted backward after launch and fell, like this one:
 
 \begin{figure}[H]
     \centering
@@ -736,7 +733,7 @@ I tried many things before making these planes fly, the biggest problem was the 
 
 
 
-The center of mass here is located behind the center of a $y$ - $z$ plane slice, and rushing air forces back to fall and front to rise, twisting the plane. And that's why I added more material in the front, in order to move center of mass to the front in order to stabialise the plane during the flight. And this is the result of my fight with engineering and nature:
+The center of mass here is located behind the center of a $y$ - $z$ plane slice, and rushing air forces the back to fall and the front to rise, twisting the plane. And that's why I added more material to the front, in order to move the center of mass to the front and stabilize the plane during the flight. And this is the result of my fight with engineering and nature:
 
 \begin{figure}[H]
     \centering
@@ -754,7 +751,7 @@ The center of mass here is located behind the center of a $y$ - $z$ plane slice,
 
 \subsection{Experiment Results}
 
-I took my planes, big ruler, pen, paper, and my confidence with me and with pure fire in the eyes I walked towards the playground. Child forces that occupied given sector decided to give up their positions, and I started my dirty job. And after compliting it I got htese results:
+I took my planes, a big ruler, a pen, paper, and my confidence with me, and with pure fire in my eyes, I walked towards the playground. The children who occupied the given area decided to give up their positions, and I started my dirty job. After completing it, I got these results:
 
 \begin{table}[H]
 \centering
@@ -780,11 +777,11 @@ I took my planes, big ruler, pen, paper, and my confidence with me and with pure
 \end{tabular}
 \end{table}
 
-I was launching my planes from the same spot, and measuring relatively to this spot.
+I launched my planes from the same spot and measured the distances relative to this spot.
 
 \section{Conclusion}
 
-So it would be easier to compare distances let's find mean of these data:
+To make it easier to compare the distances, let's find the mean of these data:
 
 Wide airplane:
 \[
@@ -809,7 +806,6 @@ So:
 \bar{x}_W > \bar{x}_N
 \]
 
-In conclusion we will get that according to my calculations and experiment planes with bigger $b$ or $AR$ or wingspan have greater $F_{\mathrm{net}}$, which results in a longer flight distance. 
-
+In conclusion, according to my calculations and experiment, planes with bigger $b$, $AR$, or wingspan have greater $F_{\mathrm{net}}$, which results in a longer flight distance.
 
 \end{document}
